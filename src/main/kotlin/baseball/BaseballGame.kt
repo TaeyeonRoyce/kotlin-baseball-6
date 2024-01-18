@@ -4,16 +4,16 @@ class BaseballGame(
     private val baseballNumberGenerator: BaseballNumberGenerator
 ) {
 
-    private lateinit var baseballNumbers: BaseballNumbers
+    private lateinit var computerBaseballNumber: BaseballNumbers
 
     init {
         printGameInitMessage()
     }
 
     fun play() {
-        val userNumbers = readUserBaseballNumbers()
-        baseballNumbers = generateComputerNumbers()
-
+        val userBaseballNumbers = BaseballNumbers(readUserBaseballNumbers().numbers)
+        computerBaseballNumber = generateComputerNumbers()
+        val gameResult = computerBaseballNumber.compareWith(userBaseballNumbers)
     }
 
     private fun generateComputerNumbers(): BaseballNumbers = BaseballNumbers(
