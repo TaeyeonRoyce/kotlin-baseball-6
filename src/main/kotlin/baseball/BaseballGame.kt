@@ -15,6 +15,7 @@ class BaseballGame(
             computerBaseballNumber = generateComputerNumbers()
             playSingleGame()
         } while (readRestart().restart)
+        printEndGame()
     }
 
     private fun playSingleGame() {

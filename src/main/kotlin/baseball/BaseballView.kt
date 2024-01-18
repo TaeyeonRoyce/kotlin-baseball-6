@@ -19,9 +19,9 @@ fun readUserBaseballNumbers() = BaseballUserInput.from(
 fun printGameResult(gameResult: BaseballGameResult) = with(gameResult) {
     when {
         isNothing() -> println("낫싱")
-        containsBall() && containsStrike() -> println("$ballCount 볼 $strikeCount 스트라이크")
-        containsBall() -> println("$ballCount 볼")
-        containsStrike() -> println("$strikeCount 스트라이크")
+        containsBall() && containsStrike() -> println("${ballCount}볼 ${strikeCount}스트라이크")
+        containsBall() -> println("${ballCount}볼")
+        containsStrike() -> println("${strikeCount}스트라이크")
         isStrikeOut() -> println("3개의 숫자를 모두 맞히셨습니다! 게임 종료")
     }
 }
@@ -31,3 +31,5 @@ fun readRestart() = BaseballRestartInput.from(
         Console.readLine()
     }
 )
+
+fun printEndGame() = println("게임 종료")
