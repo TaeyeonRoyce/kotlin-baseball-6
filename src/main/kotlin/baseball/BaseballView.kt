@@ -34,3 +34,8 @@ fun printGameResult(gameResult: BaseballGameResult) {
     }
 }
 
+fun readRestart() = BaseballRestartInput.from(
+    print(READ_USER_NUMBER_MESSAGE).run {
+        Console.readLine()
+    }
+)
