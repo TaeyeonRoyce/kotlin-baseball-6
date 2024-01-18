@@ -11,18 +11,18 @@ class BaseballGame(
     }
 
     fun play() {
-        computerBaseballNumber = generateComputerNumbers()
+        do {
+            computerBaseballNumber = generateComputerNumbers()
+            playSingleGame()
+        } while (readRestart().restart)
+    }
 
+    private fun playSingleGame() {
         do {
             val userBaseballNumbers = BaseballNumbers(readUserBaseballNumbers().numbers)
             val gameResult = computerBaseballNumber.compareWith(userBaseballNumbers)
             printGameResult(gameResult)
         } while (!gameResult.isStrikeOut())
-
-        val restartUserInput = readRestart()
-        if (restartUserInput.restart) {
-            play()
-        }
     }
 
     private fun generateComputerNumbers(): BaseballNumbers = BaseballNumbers(
