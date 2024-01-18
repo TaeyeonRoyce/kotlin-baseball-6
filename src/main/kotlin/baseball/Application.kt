@@ -1,5 +1,10 @@
 package baseball
 
 fun main() {
-    TODO("프로그램 구현")
+
+    val baseballGame = BaseballGame(
+        baseballNumberGenerator =  RandomNumberGenerator()
+    )
+
+    baseballGame.play()
 }
