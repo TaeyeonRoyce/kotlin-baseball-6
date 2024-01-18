@@ -15,3 +15,22 @@ fun readUserBaseballNumbers() = BaseballUserInput.from(
     }
 )
 
+fun printGameResult(gameResult: BaseballGameResult) {
+    with(gameResult) {
+        if (isNothing()) {
+            println("낫싱")
+            return
+        }
+        if (isStrikeOut()) {
+            println("3개의 숫자를 모두 맞히셨습니다! 게임 종료")
+            return
+        }
+        if (containsBall()) {
+            println("$ballCount 볼")
+        }
+        if (containsStrike()) {
+            println("$strikeCount 스트라이크")
+        }
+    }
+}
+
