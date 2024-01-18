@@ -12,9 +12,12 @@ class BaseballGame(
 
     fun play() {
         computerBaseballNumber = generateComputerNumbers()
-        val userBaseballNumbers = BaseballNumbers(readUserBaseballNumbers().numbers)
-        val gameResult = computerBaseballNumber.compareWith(userBaseballNumbers)
-        printGameResult(gameResult)
+
+        do {
+            val userBaseballNumbers = BaseballNumbers(readUserBaseballNumbers().numbers)
+            val gameResult = computerBaseballNumber.compareWith(userBaseballNumbers)
+            printGameResult(gameResult)
+        } while (!gameResult.isStrikeOut())
     }
 
     private fun generateComputerNumbers(): BaseballNumbers = BaseballNumbers(
